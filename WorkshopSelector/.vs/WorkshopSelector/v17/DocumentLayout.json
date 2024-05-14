@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sween\\OneDrive\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\",
+  "WorkspaceRootPath": "C:\\Users\\sween\\OneDrive\\Documents\\GitHub\\DBSPrinciplesOfProgrammingCA\\WorkshopSelector\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD8F9816-A5C9-4114-8029-36734808C199}|WorkshopSelector.csproj|c:\\users\\sween\\onedrive\\desktop\\c#\\dbs\\ca\\workshopselector\\workshopselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD8F9816-A5C9-4114-8029-36734808C199}|WorkshopSelector.csproj|c:\\users\\sween\\onedrive\\documents\\github\\dbsprinciplesofprogrammingca\\workshopselector\\workshopselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD8F9816-A5C9-4114-8029-36734808C199}|WorkshopSelector.csproj|solutionrelative:workshopselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD8F9816-A5C9-4114-8029-36734808C199}|WorkshopSelector.csproj|C:\\Users\\sween\\OneDrive\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\workshopselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{FD8F9816-A5C9-4114-8029-36734808C199}|WorkshopSelector.csproj|C:\\Users\\sween\\OneDrive\\Documents\\GitHub\\DBSPrinciplesOfProgrammingCA\\WorkshopSelector\\workshopselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{FD8F9816-A5C9-4114-8029-36734808C199}|WorkshopSelector.csproj|solutionrelative:workshopselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "workshopSelector.cs",
-              "DocumentMoniker": "C:\\Users\\sween\\OneDrive\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\workshopSelector.cs",
+              "DocumentMoniker": "C:\\Users\\sween\\OneDrive\\Documents\\GitHub\\DBSPrinciplesOfProgrammingCA\\WorkshopSelector\\workshopSelector.cs",
               "RelativeDocumentMoniker": "workshopSelector.cs",
-              "ToolTip": "C:\\Users\\sween\\OneDrive\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\workshopSelector.cs",
+              "ToolTip": "C:\\Users\\sween\\OneDrive\\Documents\\GitHub\\DBSPrinciplesOfProgrammingCA\\WorkshopSelector\\workshopSelector.cs",
               "RelativeToolTip": "workshopSelector.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAawD0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T21:57:29.492Z",
               "EditorCaption": ""
@@ -37,13 +37,12 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "workshopSelector.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sween\\OneDrive\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\workshopSelector.cs",
+              "DocumentMoniker": "C:\\Users\\sween\\OneDrive\\Documents\\GitHub\\DBSPrinciplesOfProgrammingCA\\WorkshopSelector\\workshopSelector.cs",
               "RelativeDocumentMoniker": "workshopSelector.cs",
               "ToolTip": "C:\\Users\\sween\\OneDrive\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\workshopSelector.cs [Design]",
-              "RelativeToolTip": "workshopSelector.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\C#\\dbs\\CA\\WorkshopSelector\\workshopSelector.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T19:57:23.441Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-15T19:57:23.441Z"
             }
           ]
         }
