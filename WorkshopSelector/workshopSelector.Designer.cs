@@ -37,6 +37,8 @@
             this.regFeeLabel = new System.Windows.Forms.Label();
             this.lodgingLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
+            this.daysTextBox = new System.Windows.Forms.TextBox();
+            this.DaysLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // workshopListBox
@@ -45,7 +47,7 @@
             this.workshopListBox.ItemHeight = 16;
             this.workshopListBox.Location = new System.Drawing.Point(12, 12);
             this.workshopListBox.Name = "workshopListBox";
-            this.workshopListBox.Size = new System.Drawing.Size(160, 148);
+            this.workshopListBox.Size = new System.Drawing.Size(160, 180);
             this.workshopListBox.TabIndex = 0;
             this.workshopListBox.SelectedIndexChanged += new System.EventHandler(this.workshopListBox_SelectedIndexChanged);
             // 
@@ -55,7 +57,7 @@
             this.locationListBox.ItemHeight = 16;
             this.locationListBox.Location = new System.Drawing.Point(178, 12);
             this.locationListBox.Name = "locationListBox";
-            this.locationListBox.Size = new System.Drawing.Size(160, 148);
+            this.locationListBox.Size = new System.Drawing.Size(160, 180);
             this.locationListBox.TabIndex = 1;
             this.locationListBox.SelectedIndexChanged += new System.EventHandler(this.locationListBox_SelectedIndexChanged);
             // 
@@ -63,13 +65,14 @@
             // 
             this.regFeeTextBox.Location = new System.Drawing.Point(475, 13);
             this.regFeeTextBox.Name = "regFeeTextBox";
+            this.regFeeTextBox.ReadOnly = true;
             this.regFeeTextBox.Size = new System.Drawing.Size(102, 22);
             this.regFeeTextBox.TabIndex = 2;
             this.regFeeTextBox.TextChanged += new System.EventHandler(this.regFeeTextBox_TextChanged);
             // 
             // calcButton
             // 
-            this.calcButton.Location = new System.Drawing.Point(366, 112);
+            this.calcButton.Location = new System.Drawing.Point(366, 144);
             this.calcButton.Name = "calcButton";
             this.calcButton.Size = new System.Drawing.Size(211, 48);
             this.calcButton.TabIndex = 3;
@@ -79,16 +82,18 @@
             // 
             // lodgingFeeTextBox
             // 
-            this.lodgingFeeTextBox.Location = new System.Drawing.Point(475, 40);
+            this.lodgingFeeTextBox.Location = new System.Drawing.Point(475, 88);
             this.lodgingFeeTextBox.Name = "lodgingFeeTextBox";
+            this.lodgingFeeTextBox.ReadOnly = true;
             this.lodgingFeeTextBox.Size = new System.Drawing.Size(102, 22);
             this.lodgingFeeTextBox.TabIndex = 4;
             this.lodgingFeeTextBox.TextChanged += new System.EventHandler(this.lodgingFeeTextBox_TextChanged);
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(475, 68);
+            this.outputTextBox.Location = new System.Drawing.Point(475, 116);
             this.outputTextBox.Name = "outputTextBox";
+            this.outputTextBox.ReadOnly = true;
             this.outputTextBox.Size = new System.Drawing.Size(102, 22);
             this.outputTextBox.TabIndex = 5;
             this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
@@ -105,7 +110,7 @@
             // lodgingLabel
             // 
             this.lodgingLabel.AutoSize = true;
-            this.lodgingLabel.Location = new System.Drawing.Point(386, 43);
+            this.lodgingLabel.Location = new System.Drawing.Point(386, 88);
             this.lodgingLabel.Name = "lodgingLabel";
             this.lodgingLabel.Size = new System.Drawing.Size(83, 16);
             this.lodgingLabel.TabIndex = 7;
@@ -114,17 +119,37 @@
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
-            this.totalLabel.Location = new System.Drawing.Point(431, 71);
+            this.totalLabel.Location = new System.Drawing.Point(431, 116);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(38, 16);
             this.totalLabel.TabIndex = 8;
             this.totalLabel.Text = "Total";
             // 
+            // daysTextBox
+            // 
+            this.daysTextBox.Location = new System.Drawing.Point(475, 43);
+            this.daysTextBox.Name = "daysTextBox";
+            this.daysTextBox.ReadOnly = true;
+            this.daysTextBox.Size = new System.Drawing.Size(102, 22);
+            this.daysTextBox.TabIndex = 9;
+            this.daysTextBox.TextChanged += new System.EventHandler(this.daysTextBox_TextChanged);
+            // 
+            // DaysLabel
+            // 
+            this.DaysLabel.AutoSize = true;
+            this.DaysLabel.Location = new System.Drawing.Point(431, 43);
+            this.DaysLabel.Name = "DaysLabel";
+            this.DaysLabel.Size = new System.Drawing.Size(39, 16);
+            this.DaysLabel.TabIndex = 10;
+            this.DaysLabel.Text = "Days";
+            // 
             // WorkshopSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 177);
+            this.ClientSize = new System.Drawing.Size(610, 211);
+            this.Controls.Add(this.DaysLabel);
+            this.Controls.Add(this.daysTextBox);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.lodgingLabel);
             this.Controls.Add(this.regFeeLabel);
@@ -136,6 +161,7 @@
             this.Controls.Add(this.workshopListBox);
             this.Name = "WorkshopSelector";
             this.Text = "Workshop Selector";
+            this.Load += new System.EventHandler(this.WorkshopSelector_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +178,8 @@
         private System.Windows.Forms.Label regFeeLabel;
         private System.Windows.Forms.Label lodgingLabel;
         private System.Windows.Forms.Label totalLabel;
+        private System.Windows.Forms.TextBox daysTextBox;
+        private System.Windows.Forms.Label DaysLabel;
     }
 }
 

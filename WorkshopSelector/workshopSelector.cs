@@ -19,74 +19,78 @@ namespace WorkshopSelector
             InitializeComponent();
         }
 
-        public workshopListBoxHandler()
+        internal class Workshop
         {
-            ArrayList Workshops = new ArrayList();
-            Workshops.Add(new Workshop("A", 1));
-            Workshops.Add(new Workshop("B", 2));
-            Workshops.Add(new Workshop("C", 3));
-            Workshops.Add(new Workshop("D", 4));
-            Workshops.Add(new Workshop("E", 5));
-            Workshops.DataSource = Workshops;
+            public Workshop(string name, int days, int value)
+            {
+                this.Name = name;
+                this.Days = days;
+                this.Value = value;
+            }
 
-            workshopListBox.DisplayMember = "WSName";
-            workshopListBox.ValueMember = "WSValue";
+            public string Name { get; set; }
+            public int Value { get; set; }
+            public int Days { get; set; }
 
-            // Bind the SelectedValueChanged event to our handler for it.
-            workshopListBox.SelectedIndexChanged +=
-                new EventHandler(workshopListBox_SelectedIndexChanged);
+        }
+        internal class WorkshopLocation
+        {
+            public WorkshopLocation(string name, int value)
+            {
+                this.Name = name;
+                this.Value = value;
+            }
 
-            // Ensure the form opens with no rows selected.
-            workshopListBox.ClearSelected();
+            public string Name { get; set; }
+            public int Value { get; set; }
+        }
+        public void workshopListBoxHandler()
+        {
+            Workshop[] workshops = {
+                                    new Workshop("Handling Stress", 3, 1000),
+                                    new Workshop("Time Management", 3, 500),
+                                    new Workshop("Supervision Skills", 3, 1500),
+                                    new Workshop("Negotiation Skills", 5, 1300),
+                                    new Workshop("How to Interview", 1, 500)
+                                    };
+
+            this.workshopListBox.DataSource = workshops;
+            this.workshopListBox.DisplayMember = "Name";
+        }
+        public void locationListBoxHandler()
+        {
+            WorkshopLocation[] locations = {
+                                            new WorkshopLocation("Dublin", 300),
+                                            new WorkshopLocation("Limerick", 200),
+                                            new WorkshopLocation("Cork", 300),
+                                            new WorkshopLocation("Kerry", 200),
+                                            new WorkshopLocation("Belfast", 400),
+                                            new WorkshopLocation("Sligo", 150)
+                                            };
+
+            this.locationListBox.DataSource = locations;
+            this.locationListBox.DisplayMember = "Name";
         }
 
-        public class Workshop
-        {
-            private int myValue;
-            private string myLongName;
-
-            public Workshop(string WSName, int WSValue)
-            {
-
-                this.myValue = WSValue;
-                this.myWSName = WSName;
-            }
-
-            public int myWSValue
-            {
-                get
-                {
-                    return WSValue;
-                }
-            }
-
-            public string myWSName
-            {
-
-                get
-                {
-                    return WSName;
-                }
-            }
-        }
         private void workshopListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            regFeeTextBox.Text = (((Workshop)this.workshopListBox.SelectedItem).Value).ToString();
+            daysTextBox.Text = (((Workshop)this.workshopListBox.SelectedItem).Days).ToString();    
         }
 
         private void locationListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            lodgingFeeTextBox.Text = (((WorkshopLocation)this.locationListBox.SelectedItem).Value).ToString();
         }
 
         private void regFeeTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            outputTextBox.Clear();
         }
 
         private void lodgingFeeTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            outputTextBox.Clear();
         }
 
         private void outputTextBox_TextChanged(object sender, EventArgs e)
@@ -96,7 +100,27 @@ namespace WorkshopSelector
 
         private void calcButton_Click(object sender, EventArgs e)
         {
+            outputTextBox.Text = 
+                (
+                    (
+                        (((WorkshopLocation)this.locationListBox.SelectedItem).Value) 
+                        * 
+                        (((Workshop)this.workshopListBox.SelectedItem).Days)
+                    ) 
+                    + 
+                    (((Workshop)this.workshopListBox.SelectedItem).Value)
+                ).ToString();
+        }
 
+        private void WorkshopSelector_Load(object sender, EventArgs e)
+        {
+            this.workshopListBoxHandler();
+            this.locationListBoxHandler();
+        }
+
+        private void daysTextBox_TextChanged(object sender, EventArgs e)
+        {
+            outputTextBox.Clear();
         }
     }
 }
