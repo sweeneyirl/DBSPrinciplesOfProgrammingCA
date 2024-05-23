@@ -52,9 +52,9 @@
             this.incLabel.AutoSize = true;
             this.incLabel.Location = new System.Drawing.Point(12, 68);
             this.incLabel.Name = "incLabel";
-            this.incLabel.Size = new System.Drawing.Size(148, 16);
+            this.incLabel.Size = new System.Drawing.Size(163, 16);
             this.incLabel.TabIndex = 1;
-            this.incLabel.Text = "Average Daily Increase";
+            this.incLabel.Text = "Average Daily Increase %";
             // 
             // daysLabel
             // 
@@ -73,7 +73,7 @@
             this.outputListbox.Location = new System.Drawing.Point(246, 19);
             this.outputListbox.Name = "outputListbox";
             this.outputListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.outputListbox.Size = new System.Drawing.Size(478, 212);
+            this.outputListbox.Size = new System.Drawing.Size(292, 212);
             this.outputListbox.TabIndex = 3;
             // 
             // orgsTextbox
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(554, 242);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.daysTextbox);
             this.Controls.Add(this.incTextbox);

@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace Population
 {
     public partial class Population : Form
     {
+        // Init
         public Population()
         {
             InitializeComponent();
@@ -22,51 +24,50 @@ namespace Population
         {
 
         }
-        private class LBOutput
-        {
-            public LBOutput(int orgs, int increase, int days)
-            {
-                this.Orgs = orgs;
-                this.Increase = increase;
-                this.Days = days;
-            }
-            public int Orgs { get; set; }
-            public int Increase { get; set; }
-            public int Days { get; set; }
+        // Classes
+        
 
-        }
+        // Button Handlers
         private void runButton_Click(object sender, EventArgs e)
         {
         
-            if (int.TryParse(daysTextbox.Text, out int days))
+            if (int.TryParse(daysTextbox.Text, out int daysClean))
             {
-                if (int.TryParse(orgsTextbox.Text, out int orgs))
+                if (int.TryParse(orgsTextbox.Text, out int orgsClean))
                 {
-                    if (int.TryParse(incTextbox.Text, out int inc))
+                    String increaseText = Regex.Replace(incTextbox.Text, @"[^.0-9]", "");
+                    if (decimal.TryParse(increaseText, out decimal incClean))
                     {
+                        String AddString = "1           " + orgsClean.ToString();
+                        outputListbox.Items.Add(AddString);
+                        decimal AddDec = orgsClean;
+                        incClean = incClean / 100;
                         
-                        
-                        outputListbox.Items.Add("Yiss");
-
+                        for ( int loop = 2; loop < (daysClean+1); loop++ )
+                        {
+                            AddDec = AddDec + (AddDec * incClean);
+                            AddString = loop.ToString() + "         " + AddDec.ToString();
+                            outputListbox.Items.Add(AddString);
+                        }
                     }
-                    else { outputListbox.Items.Add("Increase Textbox invalid input. Use Numbers"); }
-                } else { outputListbox.Items.Add("Org Textbox invalid input. Use numbers."); }
-            } else { outputListbox.Items.Add("Days Textbox invalid input. Use Numbers"); }
+                    else { outputListbox.Items.Add("Increase Textbox invalid input. Use Numbers as Percentage (With or without %)"); }
+                } else { outputListbox.Items.Add("Org Textbox invalid input. Use Numbers."); }
+            } else { outputListbox.Items.Add("Days Textbox invalid input. Use Numbers."); }
         }
 
         private void orgsTextbox_TextChanged(object sender, EventArgs e)
         {
-
+            outputListbox.Items.Clear();
         }
 
         private void incTextbox_TextChanged(object sender, EventArgs e)
         {
-
+            outputListbox.Items.Clear();
         }
 
         private void daysTextbox_TextChanged(object sender, EventArgs e)
         {
-
+            outputListbox.Items.Clear();
         }
     }
 }
