@@ -14,11 +14,18 @@ namespace WorkshopSelector
 {
     public partial class WorkshopSelector : Form
     {
+        //Init
         public WorkshopSelector()
         {
             InitializeComponent();
         }
-
+        private void WorkshopSelector_Load(object sender, EventArgs e)
+        {
+            this.workshopListBoxHandler();
+            this.locationListBoxHandler();
+        }
+        
+        //Classes
         internal class Workshop
         {
             public Workshop(string name, int days, int value)
@@ -44,6 +51,7 @@ namespace WorkshopSelector
             public string Name { get; set; }
             public int Value { get; set; }
         }
+        //Listbox Handlers
         public void workshopListBoxHandler()
         {
             Workshop[] workshops = {
@@ -83,6 +91,7 @@ namespace WorkshopSelector
             lodgingFeeTextBox.Text = (((WorkshopLocation)this.locationListBox.SelectedItem).Value).ToString();
         }
 
+        // Textbox Handlers
         private void regFeeTextBox_TextChanged(object sender, EventArgs e)
         {
             outputTextBox.Clear();
@@ -92,12 +101,12 @@ namespace WorkshopSelector
         {
             outputTextBox.Clear();
         }
-
-        private void outputTextBox_TextChanged(object sender, EventArgs e)
+        private void daysTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            outputTextBox.Clear();
         }
 
+        // Button Handlers
         private void calcButton_Click(object sender, EventArgs e)
         {
             outputTextBox.Text = 
@@ -112,15 +121,8 @@ namespace WorkshopSelector
                 ).ToString();
         }
 
-        private void WorkshopSelector_Load(object sender, EventArgs e)
-        {
-            this.workshopListBoxHandler();
-            this.locationListBoxHandler();
-        }
+        
 
-        private void daysTextBox_TextChanged(object sender, EventArgs e)
-        {
-            outputTextBox.Clear();
-        }
+        
     }
 }

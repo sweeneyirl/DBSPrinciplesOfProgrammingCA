@@ -96,7 +96,6 @@
             this.outputTextBox.ReadOnly = true;
             this.outputTextBox.Size = new System.Drawing.Size(102, 22);
             this.outputTextBox.TabIndex = 5;
-            this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
             // 
             // regFeeLabel
             // 
