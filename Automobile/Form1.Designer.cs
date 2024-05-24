@@ -179,9 +179,9 @@
             this.laborLabel.AutoSize = true;
             this.laborLabel.Location = new System.Drawing.Point(9, 200);
             this.laborLabel.Name = "laborLabel";
-            this.laborLabel.Size = new System.Drawing.Size(81, 16);
+            this.laborLabel.Size = new System.Drawing.Size(135, 16);
             this.laborLabel.TabIndex = 16;
-            this.laborLabel.Text = "Labor Hours";
+            this.laborLabel.Text = "Labor Hours (€30 p/h)";
             // 
             // clearAllButton
             // 
