@@ -70,17 +70,17 @@
             this.outputListbox.ColumnWidth = 85;
             this.outputListbox.FormattingEnabled = true;
             this.outputListbox.ItemHeight = 16;
-            this.outputListbox.Location = new System.Drawing.Point(246, 19);
+            this.outputListbox.Location = new System.Drawing.Point(203, 19);
             this.outputListbox.Name = "outputListbox";
             this.outputListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.outputListbox.Size = new System.Drawing.Size(292, 212);
+            this.outputListbox.Size = new System.Drawing.Size(304, 212);
             this.outputListbox.TabIndex = 3;
             // 
             // orgsTextbox
             // 
             this.orgsTextbox.Location = new System.Drawing.Point(12, 38);
             this.orgsTextbox.Name = "orgsTextbox";
-            this.orgsTextbox.Size = new System.Drawing.Size(100, 22);
+            this.orgsTextbox.Size = new System.Drawing.Size(185, 22);
             this.orgsTextbox.TabIndex = 4;
             this.orgsTextbox.TextChanged += new System.EventHandler(this.orgsTextbox_TextChanged);
             // 
@@ -88,7 +88,7 @@
             // 
             this.incTextbox.Location = new System.Drawing.Point(15, 87);
             this.incTextbox.Name = "incTextbox";
-            this.incTextbox.Size = new System.Drawing.Size(100, 22);
+            this.incTextbox.Size = new System.Drawing.Size(182, 22);
             this.incTextbox.TabIndex = 5;
             this.incTextbox.TextChanged += new System.EventHandler(this.incTextbox_TextChanged);
             // 
@@ -96,7 +96,7 @@
             // 
             this.daysTextbox.Location = new System.Drawing.Point(15, 136);
             this.daysTextbox.Name = "daysTextbox";
-            this.daysTextbox.Size = new System.Drawing.Size(100, 22);
+            this.daysTextbox.Size = new System.Drawing.Size(182, 22);
             this.daysTextbox.TabIndex = 6;
             this.daysTextbox.TextChanged += new System.EventHandler(this.daysTextbox_TextChanged);
             // 
@@ -104,7 +104,7 @@
             // 
             this.runButton.Location = new System.Drawing.Point(15, 164);
             this.runButton.Name = "runButton";
-            this.runButton.Size = new System.Drawing.Size(75, 23);
+            this.runButton.Size = new System.Drawing.Size(182, 66);
             this.runButton.TabIndex = 7;
             this.runButton.Text = "Run";
             this.runButton.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 242);
+            this.ClientSize = new System.Drawing.Size(518, 242);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.daysTextbox);
             this.Controls.Add(this.incTextbox);
@@ -125,7 +125,6 @@
             this.Controls.Add(this.orgsLabel);
             this.Name = "Population";
             this.Text = "Population";
-            this.Load += new System.EventHandler(this.Population_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

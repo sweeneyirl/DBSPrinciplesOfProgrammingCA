@@ -20,39 +20,50 @@ namespace Population
         {
             InitializeComponent();
         }
-        private void Population_Load(object sender, EventArgs e)
-        {
-
-        }
-        // Classes
-        
-
         // Button Handlers
         private void runButton_Click(object sender, EventArgs e)
         {
-        
-            if (int.TryParse(daysTextbox.Text, out int daysClean))
+            bool error = false;
+            if (int.TryParse(daysTextbox.Text, out int daysClean)){}
+            else 
+            { 
+                outputListbox.Items.Add("Days Textbox invalid input.");
+                outputListbox.Items.Add("Use Numbers");
+                outputListbox.Items.Add(" ");
+                error = true;
+            }
+            if (int.TryParse(orgsTextbox.Text, out int orgsClean)){ }
+            else 
+            { 
+                outputListbox.Items.Add("Org Textbox invalid input.");
+                outputListbox.Items.Add("Use Numbers");
+                outputListbox.Items.Add(" ");
+                error = true;
+            }
+            if (Regex.IsMatch(incTextbox.Text, @"^\d+%?$")){ }
+            else 
             {
-                if (int.TryParse(orgsTextbox.Text, out int orgsClean))
+                outputListbox.Items.Add("Increase Textbox invalid input.");
+                outputListbox.Items.Add("Use Numbers as Percentage");
+                outputListbox.Items.Add("(With or without %)");
+                error = true;
+            }   
+            if (error == false)
+            {
+                decimal.TryParse(incTextbox.Text, out decimal incClean);
+                String increaseText = Regex.Replace(incTextbox.Text, @"[^.0-9]", "");
+                String AddString = "1           " + orgsClean.ToString();
+                outputListbox.Items.Add(AddString);
+                decimal AddDec = orgsClean;
+                incClean = incClean / 100;
+
+                for (int loop = 2; loop < (daysClean + 1); loop++)
                 {
-                    String increaseText = Regex.Replace(incTextbox.Text, @"[^.0-9]", "");
-                    if (decimal.TryParse(increaseText, out decimal incClean))
-                    {
-                        String AddString = "1           " + orgsClean.ToString();
-                        outputListbox.Items.Add(AddString);
-                        decimal AddDec = orgsClean;
-                        incClean = incClean / 100;
-                        
-                        for ( int loop = 2; loop < (daysClean+1); loop++ )
-                        {
-                            AddDec = AddDec + (AddDec * incClean);
-                            AddString = loop.ToString() + "         " + AddDec.ToString();
-                            outputListbox.Items.Add(AddString);
-                        }
-                    }
-                    else { outputListbox.Items.Add("Increase Textbox invalid input. Use Numbers as Percentage (With or without %)"); }
-                } else { outputListbox.Items.Add("Org Textbox invalid input. Use Numbers."); }
-            } else { outputListbox.Items.Add("Days Textbox invalid input. Use Numbers."); }
+                    AddDec = AddDec + (AddDec * incClean);
+                    AddString = loop.ToString() + "         " + AddDec.ToString();
+                    outputListbox.Items.Add(AddString);
+                }
+            }
         }
 
         private void orgsTextbox_TextChanged(object sender, EventArgs e)
