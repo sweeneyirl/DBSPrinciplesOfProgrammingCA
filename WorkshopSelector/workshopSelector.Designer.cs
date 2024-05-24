@@ -68,7 +68,7 @@
             this.regFeeTextBox.ReadOnly = true;
             this.regFeeTextBox.Size = new System.Drawing.Size(102, 22);
             this.regFeeTextBox.TabIndex = 2;
-            this.regFeeTextBox.TextChanged += new System.EventHandler(this.regFeeTextBox_TextChanged);
+            
             // 
             // calcButton
             // 
@@ -87,7 +87,7 @@
             this.lodgingFeeTextBox.ReadOnly = true;
             this.lodgingFeeTextBox.Size = new System.Drawing.Size(102, 22);
             this.lodgingFeeTextBox.TabIndex = 4;
-            this.lodgingFeeTextBox.TextChanged += new System.EventHandler(this.lodgingFeeTextBox_TextChanged);
+            
             // 
             // outputTextBox
             // 
@@ -131,7 +131,7 @@
             this.daysTextBox.ReadOnly = true;
             this.daysTextBox.Size = new System.Drawing.Size(102, 22);
             this.daysTextBox.TabIndex = 9;
-            this.daysTextBox.TextChanged += new System.EventHandler(this.daysTextBox_TextChanged);
+            
             // 
             // DaysLabel
             // 
