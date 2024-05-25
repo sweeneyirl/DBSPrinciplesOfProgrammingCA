@@ -31,7 +31,11 @@ namespace ChargeAccountValidation
         // Button
         private void runButton_Click(object sender, EventArgs e)
         {
-            if (getAccounts().Contains(entryTextbox.Text)) 
+            if (getAccounts().Contains("No File"))
+            {
+                outputListbox.Items.Add("Error: Missing File");
+            }
+            else if (getAccounts().Contains(entryTextbox.Text)) 
             {
                 outputListbox.Items.Add("Winner Winner");
             }
@@ -43,16 +47,26 @@ namespace ChargeAccountValidation
         // Get Data from file
         private string[] getAccounts()
         {
-            using (StreamReader inputFile = new StreamReader("../../Data/charge_account.txt"))
+            try
             {
-                String getterString = null;
-                while (inputFile.EndOfStream == false)
+                using (StreamReader inputFile = new StreamReader("../../Data/charge_account.txt"))
                 {
-                    getterString = getterString + inputFile.ReadLine() + ";";
+                    String getterString = null;
+                    while (inputFile.EndOfStream == false)
+                    {
+                        getterString = getterString + inputFile.ReadLine() + ";";
+                    }
+                    String[] outputString = getterString.Split(';');
+                    return outputString;
                 }
-                String[] outputString =  getterString.Split(';');
-                return outputString;
             }
+            catch
+            {
+                string[] errorString = new String[1];
+                errorString[0] = "No File";
+                return errorString;
+            }
+            
         }
 
         
